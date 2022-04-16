@@ -2,7 +2,7 @@ const express=require("express");
 const app = express();
 const path=require("path");
 const hbs=require("hbs");
-
+const port=process.env.PORT || 8000;
 //built in middleware
 const templatePath=path.join(__dirname,"../Templates/views");
 const partialsPath=path.join(__dirname,"../Templates/Partials");
@@ -21,6 +21,6 @@ app.get("/about",(req,res)=>{
     res.render("about");
 })
 
-app.listen(8000,()=>{
-    console.log("listening the port at 8000");
+app.listen(port,()=>{
+    console.log(`listening the port at ${port}`);
 });
